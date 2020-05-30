@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pages.apps.PagesConfig'
+    'pages.apps.PagesConfig',
+    'listings.apps.ListingsConfig',
+    'realtors.apps.RealtorsConfig'
 ]
 
 MIDDLEWARE = [
@@ -76,8 +78,11 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'btredb',
+        'USER': 'postgres',
+        'PASSWORD': 'abcdefg0023',
+        'HOST': 'localhost'
     }
 }
 
@@ -122,6 +127,7 @@ USE_TZ = True
 #other apps are consolidated.
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
-STATICFILES_DIR =[
+#Directory where all the static files are stored.
+STATICFILES_DIRS =[
     os.path.join(BASE_DIR,'btre/static')
 ]
