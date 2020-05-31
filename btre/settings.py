@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig'
@@ -125,9 +126,12 @@ USE_TZ = True
 
 #STATIC_ROOT is the location where all the static files from the
 #other apps are consolidated.
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-#Directory where all the static files are stored.
-STATICFILES_DIRS =[
-    os.path.join(BASE_DIR,'btre/static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'btre/static')
 ]
+
+#Media Folder Settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
